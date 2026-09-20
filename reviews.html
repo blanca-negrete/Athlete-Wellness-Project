@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Athlete Wellness - Reviews & Feedback</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <nav>
+
+        <h2>Athlete Wellness</h2>
+
+        <div>
+            <a href="index.html">Home</a>
+            <a href="#">Resources</a>
+            <a href="#">Goals</a>
+            <a href="shop.html">Shop</a>
+            <a href="#">Login</a>
+        </div>
+
+    </nav>
+
+
+    <main>
+
+        <h1>Reviews & Feedback</h1>
+
+        <h2>What Other Athletes Are Saying</h2>
+
+
+        <div class="question">
+
+            <h3>★★★★★</h3>
+
+            <p>
+                "The check-in gave me a great opportunity to reflect on
+                my mental health and physical well-being. I feel more
+                aware of my needs and how to take care of myself."
+            </p>
+
+            <p>
+                <strong>- College Student-Athlete</strong>
+            </p>
+
+        </div>
+
+
+        <div class="question">
+
+            <h3>★★★★☆</h3>
+
+            <p>
+                "I found the check-in to be a helpful tool for
+                self-reflection. It made me realize that I need to
+                prioritize my mental health as much as my physical health."
+            </p>
+
+            <p>
+                <strong>- Student-Athlete</strong>
+            </p>
+
+        </div>
+
+
+        <h2>Share Your Feedback</h2>
+
+
+        <form>
+
+            <label for="name">Name:</label>
+
+            <input type="text" id="name">
+
+
+            <br><br>
+
+
+            <label for="rating">Rating:</label>
+
+            <select id="rating">
+
+                <option value="5">★★★★★</option>
+
+                <option value="4">★★★★☆</option>
+
+                <option value="3">★★★☆☆</option>
+
+                <option value="2">★★☆☆☆</option>
+
+                <option value="1">★☆☆☆☆</option>
+
+            </select>
+
+
+            <br><br>
+
+
+            <label for="feedback">Feedback:</label>
+
+            <br>
+
+            <textarea id="feedback" rows="5" cols="40"></textarea>
+
+
+            <br><br>
+
+
+            <button type="button" onclick="submitFeedback()">
+                Submit Feedback
+            </button>
+
+        </form>
+
+
+        <p>
+            <a href="shop.html">← Back to Shop</a>
+        </p>
+
+
+        <div id="feedbackResult"></div>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

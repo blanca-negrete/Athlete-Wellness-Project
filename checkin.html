@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Athlete Wellness - Check-In</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <nav>
+
+        <h2>Athlete Wellness</h2>
+
+        <div>
+            <a href="index.html">Home</a>
+            <a href="#">Resources</a>
+            <a href="#">Goals</a>
+            <a href="shop.html">Shop</a>
+            <a href="#">Login</a>
+        </div>
+
+    </nav>
+
+
+    <main>
+
+        <h1>Daily Wellness Check-In</h1>
+
+        <p>
+            Take a moment to reflect on how you are doing today.
+            Choose a number from 1 to 5 for each area.
+        </p>
+
+
+        <div class="question">
+
+            <h2>1. Mental Wellness</h2>
+
+            <div class="rating">
+
+                <button type="button"
+                    onclick="selectRating('mental', 1)">1</button>
+
+                <button type="button"
+                    onclick="selectRating('mental', 2)">2</button>
+
+                <button type="button"
+                    onclick="selectRating('mental', 3)">3</button>
+
+                <button type="button"
+                    onclick="selectRating('mental', 4)">4</button>
+
+                <button type="button"
+                    onclick="selectRating('mental', 5)">5</button>
+
+            </div>
+
+            <p>1 = Not doing well &nbsp;&nbsp;&nbsp; 5 = Excellent</p>
+
+        </div>
+
+
+        <div class="question">
+
+            <h2>2. Physical Recovery</h2>
+
+            <div class="rating">
+
+                <button type="button"
+                    onclick="selectRating('physical', 1)">1</button>
+
+                <button type="button"
+                    onclick="selectRating('physical', 2)">2</button>
+
+                <button type="button"
+                    onclick="selectRating('physical', 3)">3</button>
+
+                <button type="button"
+                    onclick="selectRating('physical', 4)">4</button>
+
+                <button type="button"
+                    onclick="selectRating('physical', 5)">5</button>
+
+            </div>
+
+            <p>1 = Not doing well &nbsp;&nbsp;&nbsp; 5 = Excellent</p>
+
+        </div>
+
+
+        <div class="question">
+
+            <h2>3. Academic Balance</h2>
+
+            <div class="rating">
+
+                <button type="button"
+                    onclick="selectRating('academic', 1)">1</button>
+
+                <button type="button"
+                    onclick="selectRating('academic', 2)">2</button>
+
+                <button type="button"
+                    onclick="selectRating('academic', 3)">3</button>
+
+                <button type="button"
+                    onclick="selectRating('academic', 4)">4</button>
+
+                <button type="button"
+                    onclick="selectRating('academic', 5)">5</button>
+
+            </div>
+
+            <p>1 = Not doing well &nbsp;&nbsp;&nbsp; 5 = Excellent</p>
+
+        </div>
+
+
+        <div class="question">
+
+            <h2>4. Stress Level</h2>
+
+            <div class="rating">
+
+                <button type="button"
+                    onclick="selectRating('stress', 1)">1</button>
+
+                <button type="button"
+                    onclick="selectRating('stress', 2)">2</button>
+
+                <button type="button"
+                    onclick="selectRating('stress', 3)">3</button>
+
+                <button type="button"
+                    onclick="selectRating('stress', 4)">4</button>
+
+                <button type="button"
+                    onclick="selectRating('stress', 5)">5</button>
+
+            </div>
+
+            <p>1 = Very high stress &nbsp;&nbsp;&nbsp; 5 = Very low stress</p>
+
+        </div>
+
+
+        <br>
+
+
+        <button type="button" onclick="calculateWellnessScore()">
+            Submit Check-In
+        </button>
+
+
+        <div id="checkinResult"></div>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

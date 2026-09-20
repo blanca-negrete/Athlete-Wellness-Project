@@ -1,0 +1,310 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f5f8f7;
+    color: #263238;
+}
+
+
+/* Navigation */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: white;
+    border-bottom: 1px solid #e0e6e4;
+}
+
+nav h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+nav a {
+    text-decoration: none;
+    margin-left: 25px;
+    color: #263238;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #397d6b;
+}
+
+
+/* Main Content */
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 50px 30px;
+}
+
+main > h1 {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+main > h1 + p {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+    color: #5f6f6a;
+}
+
+
+/* Home Page */
+
+.hero {
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.hero h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.hero h2 {
+    margin-top: 45px;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    color: #5f6f6a;
+}
+
+
+/* Buttons */
+
+button {
+    background-color: #397d6b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2f6859;
+}
+
+
+/* Product Grid */
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+
+/* Product Cards */
+
+.product {
+    background-color: white;
+    border-radius: 12px;
+    padding: 25px;
+    margin: 0;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.product h3 {
+    font-size: 24px;
+    margin-top: 0;
+}
+
+.product img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    margin: 10px;
+    border-radius: 8px;
+}
+
+.product p {
+    max-width: 600px;
+    margin: 15px auto;
+    line-height: 1.6;
+}
+
+.product strong {
+    font-size: 18px;
+}
+
+
+/* Wellness Journal Options */
+
+.journal-options {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 15px 0;
+}
+
+.journal-options div {
+    text-align: center;
+}
+
+.journal-options img {
+    width: 130px;
+    height: 180px;
+    object-fit: contain;
+    margin: 5px;
+}
+
+
+/* Check-In Questions */
+
+.question {
+    background-color: white;
+    border-radius: 12px;
+    padding: 25px;
+    margin: 20px 0;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+.question h2 {
+    margin-top: 0;
+}
+
+.question p {
+    color: #6b7773;
+}
+
+
+/* Rating Buttons */
+
+.rating {
+    margin: 20px 0;
+}
+
+.rating button {
+    background-color: #e8efed;
+    color: #263238;
+    padding: 10px 18px;
+    margin-right: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.rating button:hover {
+    background-color: #d4e3df;
+}
+
+.rating button.selected {
+    background-color: #397d6b;
+    color: white;
+    font-weight: bold;
+}
+
+
+/* Check-In Result */
+
+#checkinResult {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    text-align: center;
+}
+
+
+/* Reviews */
+
+form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+    max-width: 650px;
+}
+
+form input,
+form select,
+form textarea {
+    padding: 10px;
+    border: 1px solid #cdd7d4;
+    border-radius: 6px;
+    font-family: Arial, sans-serif;
+}
+
+form input {
+    width: 250px;
+}
+
+form textarea {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 8px;
+}
+
+form button {
+    margin-top: 5px;
+}
+
+#feedbackResult {
+    margin-top: 25px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+}
+
+
+/* Links */
+
+main a {
+    color: #397d6b;
+    font-weight: 500;
+}
+
+main a:hover {
+    color: #2f6859;
+}
+
+
+/* Mobile Layout */
+
+@media (max-width: 700px) {
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    nav a {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    main {
+        padding: 35px 20px;
+    }
+}
