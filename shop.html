@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,11 +40,15 @@
 
         <h2>Wellness Products</h2>
 
+        <div id="cartMessage"></div>
+
 
         <div class="products">
 
 
-            <div class="product">
+            <div class="product"
+                 onmouseover="highlightProduct(this)"
+                 onmouseout="removeHighlight(this)">
 
                 <h3>Recovery Roller</h3>
 
@@ -56,12 +61,17 @@
 
                 <p><strong>Price: $15.99</strong></p>
 
-                <button type="button">Add to Cart</button>
+                <button type="button"
+                    onclick="addToCart('Recovery Roller', 15.99)">
+                    Add to Cart
+                </button>
 
             </div>
 
 
-            <div class="product">
+            <div class="product"
+                 onmouseover="highlightProduct(this)"
+                 onmouseout="removeHighlight(this)">
 
                 <h3>Athlete Wellness Journal</h3>
 
@@ -99,12 +109,17 @@
 
                 <p><strong>Price: $12.99</strong></p>
 
-                <button type="button">Add to Cart</button>
+                <button type="button"
+                    onclick="addToCart('Athlete Wellness Journal', 12.99)">
+                    Add to Cart
+                </button>
 
             </div>
 
 
-            <div class="product">
+            <div class="product"
+                 onmouseover="highlightProduct(this)"
+                 onmouseout="removeHighlight(this)">
 
                 <h3>Student-Athlete Planner</h3>
 
@@ -118,12 +133,17 @@
 
                 <p><strong>Price: $18.99</strong></p>
 
-                <button type="button">Add to Cart</button>
+                <button type="button"
+                    onclick="addToCart('Student-Athlete Planner', 18.99)">
+                    Add to Cart
+                </button>
 
             </div>
 
 
-            <div class="product">
+            <div class="product"
+                 onmouseover="highlightProduct(this)"
+                 onmouseout="removeHighlight(this)">
 
                 <h3>Weekly Wellness Calendar</h3>
 
@@ -137,7 +157,10 @@
 
                 <p><strong>Price: $9.99</strong></p>
 
-                <button type="button">Add to Cart</button>
+                <button type="button"
+                    onclick="addToCart('Weekly Wellness Calendar', 9.99)">
+                    Add to Cart
+                </button>
 
             </div>
 
@@ -164,6 +187,9 @@
     </main>
 
 
+    <script src="script.js"></script>
+
 </body>
 
 </html>
+
