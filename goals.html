@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goals | Athlete Wellness</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <nav>
+
+        <a href="index.html" class="logo">
+            Athlete Wellness
+        </a>
+
+        <div>
+            <a href="resources.html">Resources</a>
+            <a href="goals.html">Goals</a>
+            <a href="shop.html">Shop</a>
+            <a href="#">Login</a>
+        </div>
+
+    </nav>
+
+
+    <main>
+
+        <h1>My Wellness Goals</h1>
+
+        <p>
+            Set simple goals to help support your wellness, recovery,
+            academics, and overall student-athlete experience.
+        </p>
+
+
+        <section class="goal-form">
+
+            <h2>Create a Goal</h2>
+
+            <label for="goalCategory">Goal Category</label>
+
+            <select id="goalCategory">
+
+                <option value="Mental Wellness">Mental Wellness</option>
+                <option value="Physical Recovery">Physical Recovery</option>
+                <option value="Academic Balance">Academic Balance</option>
+                <option value="Stress Management">Stress Management</option>
+                <option value="General Wellness">General Wellness</option>
+
+            </select>
+
+
+            <label for="goalText">Your Goal</label>
+
+            <input
+                type="text"
+                id="goalText"
+                placeholder="Example: Stretch for 10 minutes after practice"
+            >
+
+
+            <button type="button" onclick="addGoal()">
+                Add Goal
+            </button>
+
+            <div id="goalMessage"></div>
+
+        </section>
+
+
+        <section>
+
+            <h2>Your Goals</h2>
+
+            <div id="goalList"></div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

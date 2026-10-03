@@ -109,3 +109,102 @@ function addToCart(productName, price) {
         "<p><strong>" + productName + "</strong> has been added to your cart.</p>" +
         "<p>Price: $" + price.toFixed(2) + "</p>";
 }
+function addGoal() {
+
+    let category = document.getElementById("goalCategory").value;
+    let goalText = document.getElementById("goalText").value.trim();
+
+    if (goalText === "") {
+
+        document.getElementById("goalMessage").innerHTML =
+            "<p>Please enter a goal before adding it.</p>";
+
+        return;
+    }
+
+    let goals = JSON.parse(localStorage.getItem("athleteGoals")) || [];
+
+    let newGoal = {
+        category: category,
+        text: goalText,
+        completed: false
+    };
+
+    goals.push(newGoal);
+
+    localStorage.setItem("athleteGoals", JSON.stringify(goals));
+
+    document.getElementById("goalText").value = "";
+
+    document.getElementById("goalMessage").innerHTML =
+        "<p>Your goal has been added!</p>";
+
+    displayGoals();
+}
+
+
+function displayGoals() {
+
+    let goals = JSON.parse(localStorage.getItem("athleteGoals")) || [];
+
+    let goalList = document.getElementById("goalList");
+
+    if (goals.length === 0) {
+
+        goalList.innerHTML =
+            "<p>You have not added any goals yet.</p>";
+
+        return;
+    }
+
+    goalList.innerHTML = "";
+
+    goals.forEach(function(goal, index) {
+
+        let completedText = goal.completed
+            ? "Completed"
+            : "Mark Complete";
+
+        goalList.innerHTML +=
+            "<div class='goal-card'>" +
+                "<h3>" + goal.category + "</h3>" +
+                "<p>" + goal.text + "</p>" +
+                "<button type='button' onclick='completeGoal(" + index + ")'>" +
+                    completedText +
+                "</button>" +
+                "<button type='button' onclick='deleteGoal(" + index + ")'>" +
+                    "Delete" +
+                "</button>" +
+            "</div>";
+
+    });
+}
+
+
+function completeGoal(index) {
+
+    let goals = JSON.parse(localStorage.getItem("athleteGoals")) || [];
+
+    goals[index].completed = true;
+
+    localStorage.setItem("athleteGoals", JSON.stringify(goals));
+
+    displayGoals();
+}
+
+
+function deleteGoal(index) {
+
+    let goals = JSON.parse(localStorage.getItem("athleteGoals")) || [];
+
+    goals.splice(index, 1);
+
+    localStorage.setItem("athleteGoals", JSON.stringify(goals));
+
+    displayGoals();
+}
+
+
+if (document.getElementById("goalList")) {
+    displayGoals();
+}
