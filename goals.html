@@ -1,91 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goals | Athlete Wellness</title>
+    <title>Wellness Goals | Athlete Wellness</title>
     <link rel="stylesheet" href="css/style.css">
-
 </head>
-
 <body>
 
     <nav>
+        <h2 class="logo">
+            <a href="index.html">Athlete Wellness</a>
+        </h2>
 
-        <a href="index.html" class="logo">
-            Athlete Wellness
-        </a>
-
-        <div>
+        <div class="nav-links">
             <a href="resources.html">Resources</a>
             <a href="goals.html">Goals</a>
             <a href="shop.html">Shop</a>
-            <a href="#">Login</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="login.html">Login</a>
         </div>
-
     </nav>
 
-
     <main>
-
         <h1>My Wellness Goals</h1>
 
         <p>
-            Set simple goals to help support your wellness, recovery,
-            academics, and overall student-athlete experience.
+            Setting small, realistic goals can help you build habits
+            that support your well-being as a student-athlete.
+            Choose a category and create a goal that works for you.
         </p>
 
+        <section class="question">
+            <h2>Create a Wellness Goal</h2>
 
-        <section class="goal-form">
+            <div class="goal-form">
+                <label for="goalCategory">Wellness Category</label>
 
-            <h2>Create a Goal</h2>
+                <select id="goalCategory">
+                    <option value="Mental Wellness">Mental Wellness</option>
+                    <option value="Physical Recovery">Physical Recovery</option>
+                    <option value="Academic Balance">Academic Balance</option>
+                    <option value="Stress Management">Stress Management</option>
+                    <option value="General Wellness">General Wellness</option>
+                </select>
 
-            <label for="goalCategory">Goal Category</label>
+                <label for="goalText">Your Goal</label>
 
-            <select id="goalCategory">
+                <input
+                    type="text"
+                    id="goalText"
+                    placeholder="Example: Plan my assignments every Sunday"
+                    maxlength="200"
+                >
 
-                <option value="Mental Wellness">Mental Wellness</option>
-                <option value="Physical Recovery">Physical Recovery</option>
-                <option value="Academic Balance">Academic Balance</option>
-                <option value="Stress Management">Stress Management</option>
-                <option value="General Wellness">General Wellness</option>
+                <button type="button" onclick="addGoal()">
+                    Add Goal
+                </button>
 
-            </select>
-
-
-            <label for="goalText">Your Goal</label>
-
-            <input
-                type="text"
-                id="goalText"
-                placeholder="Example: Stretch for 10 minutes after practice"
-            >
-
-
-            <button type="button" onclick="addGoal()">
-                Add Goal
-            </button>
-
-            <div id="goalMessage"></div>
-
+                <p id="goalMessage" aria-live="polite"></p>
+            </div>
         </section>
-
 
         <section>
-
             <h2>Your Goals</h2>
 
-            <div id="goalList"></div>
+            <p>
+                Your goals are saved in this browser, so they can
+                remain available when you return using the same browser.
+            </p>
 
+            <div id="goalList" aria-live="polite"></div>
         </section>
 
-    </main>
+        <p>
+            <a href="checkin.html">Return to Wellness Check-In</a>
+        </p>
 
+        <p>
+            <a href="resources.html">Explore Wellness Resources</a>
+        </p>
+    </main>
 
     <script src="script.js"></script>
 
-</body>
+    <script>
+        // Read the recommended category from the check-in link.
+        const urlParameters = new URLSearchParams(window.location.search);
+        const recommendedCategory = urlParameters.get("category");
+        const categoryDropdown = document.getElementById("goalCategory");
 
+        // Select the recommended category only if it is a valid option.
+        if (recommendedCategory && categoryDropdown) {
+            const matchingOption = Array.from(categoryDropdown.options)
+                .find(function (option) {
+                    return option.value === recommendedCategory;
+                });
+
+            if (matchingOption) {
+                categoryDropdown.value = recommendedCategory;
+
+                document.getElementById("goalMessage").textContent =
+                    "Suggested category selected from your wellness check-in. " +
+                    "Now enter a goal that feels realistic for you.";
+            }
+        }
+    </script>
+
+</body>
 </html>

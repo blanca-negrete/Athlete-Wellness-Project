@@ -1,169 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Athlete Wellness - Check-In</title>
+    <title>Wellness Check-In | Athlete Wellness</title>
     <link rel="stylesheet" href="css/style.css">
-
 </head>
-
 <body>
 
     <nav>
-        <a href="index.html" class="logo">
-            <h2>Athlete Wellness</h2>
-        </a>
+        <h2 class="logo">
+            <a href="index.html">Athlete Wellness</a>
+        </h2>
 
-        <div>
+        <div class="nav-links">
             <a href="resources.html">Resources</a>
             <a href="goals.html">Goals</a>
             <a href="shop.html">Shop</a>
-            <a href="#">Login</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="login.html">Login</a>
         </div>
-
     </nav>
 
-
     <main>
-
         <h1>Daily Wellness Check-In</h1>
 
         <p>
-            Take a moment to reflect on how you are doing today.
-            Rate each area from 1 to 5. Your responses will help identify an area of wellness you may want to focus on.        
+            Take a moment to reflect on how you are feeling today.
+            Rate each category from 1 to 5 based on your current experience.
         </p>
 
-
-        <div class="question">
-
-            <h2>1. Mental Wellness</h2>
-
-            <div class="rating">
-
-                <button type="button"
-                    onclick="selectRating('mental', 1)">1</button>
-
-                <button type="button"
-                    onclick="selectRating('mental', 2)">2</button>
-
-                <button type="button"
-                    onclick="selectRating('mental', 3)">3</button>
-
-                <button type="button"
-                    onclick="selectRating('mental', 4)">4</button>
-
-                <button type="button"
-                    onclick="selectRating('mental', 5)">5</button>
-
-            </div>
-
-            <p>1 = Not doing well &nbsp;&nbsp;&nbsp; 5 = Excellent</p>
-
-        </div>
-
-
-        <div class="question">
-
-            <h2>2. Physical Recovery</h2>
+        <section class="question">
+            <h2>Mental Wellness</h2>
+            <p>How would you rate your mental and emotional well-being?</p>
 
             <div class="rating">
-
-                <button type="button"
-                    onclick="selectRating('physical', 1)">1</button>
-
-                <button type="button"
-                    onclick="selectRating('physical', 2)">2</button>
-
-                <button type="button"
-                    onclick="selectRating('physical', 3)">3</button>
-
-                <button type="button"
-                    onclick="selectRating('physical', 4)">4</button>
-
-                <button type="button"
-                    onclick="selectRating('physical', 5)">5</button>
-
+                <button type="button" onclick="selectRating('mental', 1, this)" aria-pressed="false">1</button>
+                <button type="button" onclick="selectRating('mental', 2, this)" aria-pressed="false">2</button>
+                <button type="button" onclick="selectRating('mental', 3, this)" aria-pressed="false">3</button>
+                <button type="button" onclick="selectRating('mental', 4, this)" aria-pressed="false">4</button>
+                <button type="button" onclick="selectRating('mental', 5, this)" aria-pressed="false">5</button>
             </div>
+        </section>
 
-            <p>1 = Not doing well &nbsp;&nbsp;&nbsp; 5 = Excellent</p>
-
-        </div>
-
-
-        <div class="question">
-
-            <h2>3. Academic Balance</h2>
+        <section class="question">
+            <h2>Physical Recovery</h2>
+            <p>How well-rested and physically recovered do you feel?</p>
 
             <div class="rating">
-
-                <button type="button"
-                    onclick="selectRating('academic', 1)">1</button>
-
-                <button type="button"
-                    onclick="selectRating('academic', 2)">2</button>
-
-                <button type="button"
-                    onclick="selectRating('academic', 3)">3</button>
-
-                <button type="button"
-                    onclick="selectRating('academic', 4)">4</button>
-
-                <button type="button"
-                    onclick="selectRating('academic', 5)">5</button>
-
+                <button type="button" onclick="selectRating('physical', 1, this)" aria-pressed="false">1</button>
+                <button type="button" onclick="selectRating('physical', 2, this)" aria-pressed="false">2</button>
+                <button type="button" onclick="selectRating('physical', 3, this)" aria-pressed="false">3</button>
+                <button type="button" onclick="selectRating('physical', 4, this)" aria-pressed="false">4</button>
+                <button type="button" onclick="selectRating('physical', 5, this)" aria-pressed="false">5</button>
             </div>
+        </section>
 
-            <p>1 = Not doing well &nbsp;&nbsp;&nbsp; 5 = Excellent</p>
-
-        </div>
-
-
-        <div class="question">
-
-            <h2>4. Stress Level</h2>
+        <section class="question">
+            <h2>Academic Balance</h2>
+            <p>How well are you balancing schoolwork and athletics?</p>
 
             <div class="rating">
-
-                <button type="button"
-                    onclick="selectRating('stress', 1)">1</button>
-
-                <button type="button"
-                    onclick="selectRating('stress', 2)">2</button>
-
-                <button type="button"
-                    onclick="selectRating('stress', 3)">3</button>
-
-                <button type="button"
-                    onclick="selectRating('stress', 4)">4</button>
-
-                <button type="button"
-                    onclick="selectRating('stress', 5)">5</button>
-
+                <button type="button" onclick="selectRating('academic', 1, this)" aria-pressed="false">1</button>
+                <button type="button" onclick="selectRating('academic', 2, this)" aria-pressed="false">2</button>
+                <button type="button" onclick="selectRating('academic', 3, this)" aria-pressed="false">3</button>
+                <button type="button" onclick="selectRating('academic', 4, this)" aria-pressed="false">4</button>
+                <button type="button" onclick="selectRating('academic', 5, this)" aria-pressed="false">5</button>
             </div>
+        </section>
 
-            <p>1 = Very high stress &nbsp;&nbsp;&nbsp; 5 = Very low stress</p>
+        <section class="question">
+            <h2>Stress Management</h2>
+            <p>How well are you managing your current stress levels?</p>
 
-        </div>
+            <div class="rating">
+                <button type="button" onclick="selectRating('stress', 1, this)" aria-pressed="false">1</button>
+                <button type="button" onclick="selectRating('stress', 2, this)" aria-pressed="false">2</button>
+                <button type="button" onclick="selectRating('stress', 3, this)" aria-pressed="false">3</button>
+                <button type="button" onclick="selectRating('stress', 4, this)" aria-pressed="false">4</button>
+                <button type="button" onclick="selectRating('stress', 5, this)" aria-pressed="false">5</button>
+            </div>
+        </section>
 
-
-        <br>
-
+        <p>
+            Rating scale: 1 = needs improvement, 2 = below average,
+            3 = okay, 4 = good, 5 = excellent.
+        </p>
 
         <button type="button" onclick="calculateWellnessScore()">
             Submit Check-In
         </button>
 
-
-        <div id="checkinResult"></div>
-
+        <div id="checkinResult" aria-live="polite"></div>
     </main>
 
-
     <script src="script.js"></script>
-
 </body>
-
 </html>

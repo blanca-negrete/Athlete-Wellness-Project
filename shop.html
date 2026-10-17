@@ -1,194 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Athlete Wellness - Shop</title>
+    <title>Wellness Shop | Athlete Wellness</title>
     <link rel="stylesheet" href="css/style.css">
-
 </head>
-
 <body>
 
     <nav>
-        <a href="index.html" class="logo">
-            <h2>Athlete Wellness</h2>
-        </a>
+        <h2 class="logo">
+            <a href="index.html">Athlete Wellness</a>
+        </h2>
 
-        <div>
+        <div class="nav-links">
             <a href="resources.html">Resources</a>
             <a href="goals.html">Goals</a>
-            <a href="shop.html">Shop</a>
-            <a href="#">Login</a>
+            <a href="shop.html" aria-current="page">Shop</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="login.html">Login</a>
         </div>
-
     </nav>
 
-
-    <main>
-
+    <main class="shop-container">
         <h1>Athlete Wellness Shop</h1>
 
         <p>
-            Explore wellness and recovery products designed to support
-            student-athletes in their daily routines.
+            Explore tools designed to help student-athletes organize
+            their schedules, reflect on their wellness, and support
+            their everyday routines.
         </p>
 
+        <p>
+            Looking for a place to start?
+            <a href="checkin.html">Complete your wellness check-in</a>
+            to reflect on your current needs.
+        </p>
+
+        <!-- Shopping Cart -->
+        <section class="cart-section" id="shopping-cart">
+            <h2>Your Cart (<span id="cartCount">0</span>)</h2>
+
+            <div id="cartMessage" aria-live="polite">
+                <p>Your cart is empty. Add a product to get started.</p>
+            </div>
+
+            <p class="cart-total">
+                Subtotal: $<span id="cartSubtotal">0.00</span>
+            </p>
+
+            <button
+                type="button"
+                id="clearCartButton"
+                onclick="clearCart()"
+                disabled
+            >
+                Clear Cart
+            </button>
+
+            <p class="cart-note">
+                This is a front-end shopping cart demonstration.
+                Checkout and payment processing are not available.
+            </p>
+        </section>
 
         <h2>Wellness Products</h2>
 
-        <div id="cartMessage"></div>
-
-
         <div class="products">
 
-
-            <div class="product"
-                 onmouseover="highlightProduct(this)"
-                 onmouseout="removeHighlight(this)">
+            <!-- Recovery Roller -->
+            <div
+                class="product"
+                id="recovery-roller"
+                onmouseover="highlightProduct(this)"
+                onmouseout="removeHighlight(this)"
+            >
+                <img
+                    src="images/roller.webp"
+                    alt="Recovery roller"
+                >
 
                 <h3>Recovery Roller</h3>
 
-                <img src="images/roller.webp" alt="Recovery Roller">
-
                 <p>
-                    A portable recovery tool designed to help athletes
-                    relax and recover after practices, workouts, and games.
+                    A recovery tool that can be part of an athlete's
+                    personal recovery routine.
                 </p>
 
-                <p><strong>Price: $15.99</strong></p>
+                <p class="product-price">$15.99</p>
 
-                <button type="button"
-                    onclick="addToCart('Recovery Roller', 15.99)">
+                <button
+                    type="button"
+                    onclick="addToCart('Recovery Roller', 15.99)"
+                >
                     Add to Cart
                 </button>
-
             </div>
 
+            <!-- Athlete Wellness Journal -->
+            <div
+                class="product"
+                id="wellness-journal"
+                onmouseover="highlightProduct(this)"
+                onmouseout="removeHighlight(this)"
+            >
+                <div class="journal-options">
+                    <img
+                        src="images/wellness-journal.avif"
+                        alt="Athlete wellness journal cover"
+                    >
 
-            <div class="product"
-                 onmouseover="highlightProduct(this)"
-                 onmouseout="removeHighlight(this)">
+                    <img
+                        src="images/wellness-journal1.avif"
+                        alt="Athlete wellness journal example"
+                    >
+
+                    <img
+                        src="images/wellness-journal2.avif"
+                        alt="Additional athlete wellness journal view"
+                    >
+                </div>
 
                 <h3>Athlete Wellness Journal</h3>
 
                 <p>
-                    Choose from three journal options designed to support
-                    reflection, goals, and overall wellness.
+                    A place to reflect on daily experiences, record
+                    thoughts, and track personal wellness goals.
                 </p>
 
-                <div class="journal-options">
+                <p class="product-price">$12.99</p>
 
-                    <div>
-                        <img src="images/wellness-journal.avif"
-                            alt="Wellness Journal Option 1">
-                        <p><strong>Option 1</strong></p>
-                    </div>
-
-                    <div>
-                        <img src="images/wellness-journal1.avif"
-                            alt="Wellness Journal Option 2">
-                        <p><strong>Option 2</strong></p>
-                    </div>
-
-                    <div>
-                        <img src="images/wellness-journal2.avif"
-                            alt="Wellness Journal Option 3">
-                        <p><strong>Option 3</strong></p>
-                    </div>
-
-                </div>
-
-                <p>
-                    A guided journal for student-athletes to reflect on
-                    their goals, daily wellness, stress, and progress.
-                </p>
-
-                <p><strong>Price: $12.99</strong></p>
-
-                <button type="button"
-                    onclick="addToCart('Athlete Wellness Journal', 12.99)">
+                <button
+                    type="button"
+                    onclick="addToCart('Athlete Wellness Journal', 12.99)"
+                >
                     Add to Cart
                 </button>
-
             </div>
 
-
-            <div class="product"
-                 onmouseover="highlightProduct(this)"
-                 onmouseout="removeHighlight(this)">
+            <!-- Student-Athlete Planner -->
+            <div
+                class="product"
+                id="student-athlete-planner"
+                onmouseover="highlightProduct(this)"
+                onmouseout="removeHighlight(this)"
+            >
+                <img
+                    src="images/planner.webp"
+                    alt="Student-athlete planner"
+                >
 
                 <h3>Student-Athlete Planner</h3>
 
-                <img src="images/planner.webp"
-                    alt="Student-Athlete Planner">
-
                 <p>
-                    A planner designed to help student-athletes organize
-                    classes, practices, workouts, assignments, and goals.
+                    Organize assignments, practices, competitions,
+                    deadlines, and other responsibilities.
                 </p>
 
-                <p><strong>Price: $18.99</strong></p>
+                <p class="product-price">$18.99</p>
 
-                <button type="button"
-                    onclick="addToCart('Student-Athlete Planner', 18.99)">
+                <button
+                    type="button"
+                    onclick="addToCart('Student-Athlete Planner', 18.99)"
+                >
                     Add to Cart
                 </button>
-
             </div>
 
-
-            <div class="product"
-                 onmouseover="highlightProduct(this)"
-                 onmouseout="removeHighlight(this)">
+            <!-- Weekly Wellness Calendar -->
+            <div
+                class="product"
+                id="weekly-wellness-calendar"
+                onmouseover="highlightProduct(this)"
+                onmouseout="removeHighlight(this)"
+            >
+                <img
+                    src="images/weeckly-plan.webp"
+                    alt="Weekly wellness planning calendar"
+                >
 
                 <h3>Weekly Wellness Calendar</h3>
 
-                <img src="images/weeckly-plan.webp"
-                    alt="Weekly Wellness Calendar">
-
                 <p>
-                    A weekly calendar to help student-athletes plan
-                    workouts, recovery, academics, and personal time.
+                    Plan your week and make time for academics,
+                    training, recovery, and personal activities.
                 </p>
 
-                <p><strong>Price: $9.99</strong></p>
+                <p class="product-price">$9.99</p>
 
-                <button type="button"
-                    onclick="addToCart('Weekly Wellness Calendar', 9.99)">
+                <button
+                    type="button"
+                    onclick="addToCart('Weekly Wellness Calendar', 9.99)"
+                >
                     Add to Cart
                 </button>
-
             </div>
-
 
         </div>
 
+        <section class="shop-next-steps">
+            <h2>Continue Your Wellness Journey</h2>
 
-        <h2>Want to Check In First?</h2>
+            <p>
+                <a href="resources.html">Explore Wellness Resources</a>
+            </p>
 
-        <p>
-            Take a quick wellness check-in before exploring our products.
-        </p>
+            <p>
+                <a href="goals.html">Set a Wellness Goal</a>
+            </p>
 
-        <a href="checkin.html">
-            <button type="button">Start Check-In</button>
-        </a>
-
-
-        <p>
-            Want to share your experience?
-            <a href="reviews.html">View Reviews & Feedback</a>
-        </p>
-
+            <p>
+                <a href="reviews.html">Read Reviews or Share Feedback</a>
+            </p>
+        </section>
     </main>
 
-
     <script src="script.js"></script>
-
 </body>
-
 </html>
-

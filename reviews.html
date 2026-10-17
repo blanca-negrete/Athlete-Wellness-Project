@@ -1,139 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Athlete Wellness - Reviews & Feedback</title>
+    <title>Reviews & Feedback | Athlete Wellness</title>
     <link rel="stylesheet" href="css/style.css">
-
 </head>
-
 <body>
 
     <nav>
-        <a href="index.html" class="logo">
-            <h2>Athlete Wellness</h2>
-        </a>
+        <h2 class="logo">
+            <a href="index.html">Athlete Wellness</a>
+        </h2>
 
-        <div>
+        <div class="nav-links">
             <a href="resources.html">Resources</a>
             <a href="goals.html">Goals</a>
             <a href="shop.html">Shop</a>
-            <a href="#">Login</a>
+            <a href="reviews.html" aria-current="page">Reviews</a>
+            <a href="login.html">Login</a>
         </div>
-
     </nav>
 
-
-    <main>
-
+    <main class="reviews-container">
         <h1>Reviews & Feedback</h1>
 
-        <h2>What Other Athletes Are Saying</h2>
-
-
-        <div class="question">
-
-            <h3>★★★★★</h3>
-
-            <p>
-                "The check-in gave me a great opportunity to reflect on
-                my mental health and physical well-being. I feel more
-                aware of my needs and how to take care of myself."
-            </p>
-
-            <p>
-                <strong>- College Student-Athlete</strong>
-            </p>
-
-        </div>
-
-
-        <div class="question">
-
-            <h3>★★★★☆</h3>
-
-            <p>
-                "I found the check-in to be a helpful tool for
-                self-reflection. It made me realize that I need to
-                prioritize my mental health as much as my physical health."
-            </p>
-
-            <p>
-                <strong>- Student-Athlete</strong>
-            </p>
-
-        </div>
-
-
-        <h2>Share Your Feedback</h2>
         <p>
-            Your feedback can help us improve the Athlete Wellness experience
-            and better understand what student-athletes find useful.
+            Athlete Wellness is designed to help college student-athletes
+            explore wellness resources, organize goals, and find tools
+            that support their daily routines.
         </p>
 
+        <section class="reviews-section">
+            <h2>Example Reviews</h2>
 
-        <form>
+            <p class="example-note">
+                The reviews below are illustrative examples for the website
+                prototype. They are not actual customer testimonials.
+            </p>
 
-            <label for="name">Name:</label>
+            <article class="review-card">
+                <div class="review-stars" aria-label="5 out of 5 stars">
+                    ★★★★★
+                </div>
 
-            <input type="text" id="name">
+                <h3>Student-Athlete Experience</h3>
 
+                <p>
+                    "Having a place to organize my wellness goals and
+                    reflect on my week could help me stay more organized."
+                </p>
 
-            <br><br>
+                <p class="review-attribution">
+                    Example review — not a real customer testimonial
+                </p>
+            </article>
 
+            <article class="review-card">
+                <div class="review-stars" aria-label="4 out of 5 stars">
+                    ★★★★☆
+                </div>
 
-            <label for="rating">Rating:</label>
+                <h3>Planning and Wellness</h3>
 
-            <select id="rating">
+                <p>
+                    "The combination of resources and planning tools
+                    makes it easier to think about balancing academics,
+                    athletics, and recovery."
+                </p>
 
-                <option value="5">★★★★★</option>
+                <p class="review-attribution">
+                    Example review — not a real customer testimonial
+                </p>
+            </article>
+        </section>
 
-                <option value="4">★★★★☆</option>
+        <section class="feedback-section">
+            <h2>Share Your Feedback</h2>
 
-                <option value="3">★★★☆☆</option>
+            <p>
+                Your feedback can help us improve the Athlete Wellness
+                website and its features.
+            </p>
 
-                <option value="2">★★☆☆☆</option>
+            <form id="feedbackForm">
+                <label for="name">Name</label>
 
-                <option value="1">★☆☆☆☆</option>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your name"
+                    maxlength="80"
+                    required
+                >
 
-            </select>
+                <label for="rating">Your Rating</label>
 
+                <select id="rating" name="rating" required>
+                    <option value="">Select a rating</option>
+                    <option value="5">5 stars — Excellent</option>
+                    <option value="4">4 stars — Very Good</option>
+                    <option value="3">3 stars — Good</option>
+                    <option value="2">2 stars — Fair</option>
+                    <option value="1">1 star — Needs Improvement</option>
+                </select>
 
-            <br><br>
+                <label for="feedback">Your Feedback</label>
 
+                <textarea
+                    id="feedback"
+                    name="feedback"
+                    rows="5"
+                    maxlength="1000"
+                    placeholder="Tell us what you think about Athlete Wellness..."
+                    required
+                ></textarea>
 
-            <label for="feedback">Feedback:</label>
+                <button type="submit">Submit Feedback</button>
+            </form>
 
-            <br>
+            <div id="feedbackResult" aria-live="polite"></div>
 
-            <textarea id="feedback" rows="5" cols="40"></textarea>
+            <p class="feedback-note">
+                This prototype displays your feedback on the page but
+                does not save it to an account or database.
+            </p>
+        </section>
 
+        <section class="reviews-links">
+            <h2>Explore Athlete Wellness</h2>
 
-            <br><br>
+            <p>
+                <a href="resources.html">Explore Wellness Resources</a>
+            </p>
 
+            <p>
+                <a href="goals.html">Set a Wellness Goal</a>
+            </p>
 
-            <button type="button" onclick="submitFeedback()">
-                Submit Feedback
-            </button>
-
-        </form>
-
-
-        <p>
-            <a href="shop.html">← Back to Shop</a>
-        </p>
-
-
-        <div id="feedbackResult"></div>
-
+            <p>
+                <a href="shop.html">Browse the Wellness Shop</a>
+            </p>
+        </section>
     </main>
-
 
     <script src="script.js"></script>
 
-</body>
+    <script>
+        // Handle feedback form submission without reloading the page.
+        const feedbackForm = document.getElementById("feedbackForm");
 
+        feedbackForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            submitFeedback();
+        });
+    </script>
+
+</body>
 </html>
